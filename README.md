@@ -3,7 +3,7 @@ colordiff.js
 
 JavaScript implementation of CIEDE2000 of Delta E which measures the distance between two L*a*b* or rgb colors
 
-
+Read more on : http://en.wikipedia.org/wiki/Color_difference
 
 ##Test
 

@@ -1,0 +1,12 @@
+{
+	"name" : "colordiff",
+	"description" : "JavaScript implementation of CIEDE2000 of Delta E which measures the distance between two L*a*b* or rgb colors",
+	"main"          : "colordiff.js",
+	"version" : "0.0.1",
+	"license"       : "MIT",
+	"scripts": {
+		"test": "mocha test",
+		"build": "uglifyjs colordiff.js --mangle --source-map colordiff-min.map -o colordiff-min.js"
+	}
+}
+

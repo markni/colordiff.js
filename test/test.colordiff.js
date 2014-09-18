@@ -5,7 +5,7 @@ describe('colordiff.js', function () {
 
 
 	describe('#noConflict()', function () {
-		it('should return romaji object', function () {
+		it('should return Colordiff object', function () {
 			var noconflictcolordiff = Colordiff.noConflict();
 			assert.equal(Colordiff, noconflictcolordiff);
 		})

@@ -42,11 +42,11 @@
 		var C2 = Math.sqrt(Math.pow(a2, 2) + Math.pow(b2, 2));
 
 		var diff_alt_L = L1 - L2;
-		var avg_L = (L1 + L2) / 2.0;
-		var avg_C = (C1 + C2) / 2.0;
+		var avg_L = (L1 + L2) / 2;
+		var avg_C = (C1 + C2) / 2;
 
-		var alt_a1 = a1 + (a1 / 2.0) * (1 - Math.sqrt(Math.pow(avg_C, 7.0) / (Math.pow(avg_C, 7.0) + Math.pow(25.0, 7.0))));
-		var alt_a2 = a2 + (a2 / 2.0) * (1 - Math.sqrt(Math.pow(avg_C, 7.0) / (Math.pow(avg_C, 7.0) + Math.pow(25.0, 7.0))));
+		var alt_a1 = a1 + (a1 / 2) * (1 - Math.sqrt(Math.pow(avg_C, 7) / (Math.pow(avg_C, 7) + Math.pow(25, 7))));
+		var alt_a2 = a2 + (a2 / 2) * (1 - Math.sqrt(Math.pow(avg_C, 7) / (Math.pow(avg_C, 7) + Math.pow(25, 7))));
 
 		var alt_C1 = Math.sqrt(Math.pow(alt_a1, 2) + Math.pow(b1, 2));
 		var alt_C2 = Math.sqrt(Math.pow(alt_a2, 2) + Math.pow(b2, 2));
@@ -57,8 +57,8 @@
 		var alt_h1 = toDeg(Math.atan2(b1, alt_a1)) % 360;
 		var alt_h2 = toDeg(Math.atan2(b2, alt_a2)) % 360;
 
-		if (alt_h1<0) {alt_h1+=360};
-		if (alt_h2<0) {alt_h2+=360};
+		if (alt_h1<0) {alt_h1+=360}
+		if (alt_h2<0) {alt_h2+=360}
 
 
 		var diff_alt_h;
@@ -101,15 +101,15 @@
 
 		return Math.sqrt(Math.pow(diff_alt_L/ (KL * SL),2) + Math.pow(diff_alt_C/ (KC * SC),2) + Math.pow(diff_alt_H/ (KH * SH),2) + RT*(diff_alt_C / (KC * SC))*(diff_alt_H / (KH * SH)) );
 
-	}
+	};
 
 	var toDeg = function (rad) {
 		return rad * 180 / Math.PI;
-	}
+	};
 
 	var toRad = function (deg) {
 		return deg * Math.PI / 180;
-	}
+	};
 
 	var rgb2Lab = function (rgb) {
 

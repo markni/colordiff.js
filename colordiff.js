@@ -30,7 +30,8 @@
 	Colordiff.compare = function (color1, color2, type) {
 		var Lab1 = color1;
 		var Lab2 = color2;
-	    if (typeof type !== 'undefined' && type === 'rgb'){
+
+	  if (typeof type !== 'undefined' && type === 'rgb'){
 			Lab1 = rgb2Lab(color1);
 			Lab2 = rgb2Lab(color2);
 		}
@@ -41,11 +42,11 @@
 		var C2 = Math.sqrt(Math.pow(a2, 2) + Math.pow(b2, 2));
 
 		var diff_alt_L = L1 - L2;
-		var avg_L = (L1 + L2) / 2;
-		var avg_C = (C1 + C2) / 2;
+		var avg_L = (L1 + L2) / 2.0;
+		var avg_C = (C1 + C2) / 2.0;
 
-		var alt_a1 = a1 + (a1 / 2) * (1 - Math.sqrt(Math.pow(avg_C, 7) / (Math.pow(avg_C, 7) + Math.pow(25, 7))));
-		var alt_a2 = a2 + (a2 / 2) * (1 - Math.sqrt(Math.pow(avg_C, 7) / (Math.pow(avg_C, 7) + Math.pow(25, 7))));
+		var alt_a1 = a1 + (a1 / 2.0) * (1 - Math.sqrt(Math.pow(avg_C, 7.0) / (Math.pow(avg_C, 7.0) + Math.pow(25.0, 7.0))));
+		var alt_a2 = a2 + (a2 / 2.0) * (1 - Math.sqrt(Math.pow(avg_C, 7.0) / (Math.pow(avg_C, 7.0) + Math.pow(25.0, 7.0))));
 
 		var alt_C1 = Math.sqrt(Math.pow(alt_a1, 2) + Math.pow(b1, 2));
 		var alt_C2 = Math.sqrt(Math.pow(alt_a2, 2) + Math.pow(b2, 2));
@@ -55,6 +56,10 @@
 
 		var alt_h1 = toDeg(Math.atan2(b1, alt_a1)) % 360;
 		var alt_h2 = toDeg(Math.atan2(b2, alt_a2)) % 360;
+
+		if (alt_h1<0) {alt_h1+=360};
+		if (alt_h2<0) {alt_h2+=360};
+
 
 		var diff_alt_h;
 

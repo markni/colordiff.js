@@ -1,7 +1,7 @@
 colordiff.js
 ============
 
-[![Build Status](https://travis-ci.org/xna2/colordiff.js.svg?branch=master)](https://travis-ci.org/xna2/colordiff.js)
+[![Build Status](https://travis-ci.org/markni/colordiff.js.svg?branch=master)](https://travis-ci.org/markni/colordiff.js)
 
 JavaScript implementation of CIEDE2000 of Delta E which measures the distance between two L*a*b* or rgb colors
 
